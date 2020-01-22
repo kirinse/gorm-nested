@@ -71,7 +71,7 @@ func (p *Plugin) updateCallback(scope *gorm.Scope) {
 			Where(p.expr(":tree_right < 0"), getTreeLeft(node), getTreeRight(node)).
 			Updates(map[string]interface{}{
 				p.treeLeftName:  gorm.Expr(p.expr("-1 * :tree_left")),
-				p.treeRightName: gorm.Expr(p.expr("-1 * tree_right")),
+				p.treeRightName: gorm.Expr(p.expr("-1 * :tree_right")),
 			})
 
 		return
