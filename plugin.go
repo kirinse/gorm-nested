@@ -33,7 +33,8 @@ func Register(db *gorm.DB) (Plugin, error) {
 func (p *Plugin) enableCallbacks() {
 	callback := p.db.Callback()
 	callback.Create().After("gorm:after_create").Register(callbackNameCreate, p.createCallback)
-	callback.Update().After("gorm:after_update").Register(callbackNameUpdate, p.updateCallback)
+	// todo: 禁用 update hook, 1. 移动用户节点、彩票返奖率设置强关联; 2. 目前实现每次用户记录更新重新计算 left, right 值并且错误
+	//callback.Update().After("gorm:after_update").Register(callbackNameUpdate, p.updateCallback)
 	callback.Delete().After("gorm:after_delete").Register(callbackNameDelete, p.deleteCallback)
 }
 
