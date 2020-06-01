@@ -5,12 +5,12 @@ import (
 )
 
 const (
-	tagName             = "gorm-nested"
-	callbackNameCreate  = "gorm-nested:create"
-	callbackNameUpdate  = "gorm-nested:update"
-	callbackNameDelete  = "gorm-nested:delete"
-	settingIgnoreUpdate = "gorm-nested:ignore_update"
-	settingIgnoreDelete = "gorm-nested:ignore_delete"
+	tagName             = "nested"
+	callbackNameCreate  = "nested:create"
+	callbackNameUpdate  = "nested:update"
+	callbackNameDelete  = "nested:delete"
+	settingIgnoreUpdate = "nested:ignore_update"
+	settingIgnoreDelete = "nested:ignore_delete"
 )
 
 // Plugin gorm nested set plugin
